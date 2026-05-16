@@ -2,33 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-/// <summary>
-/// Manages a collection of journal entries and handles saving/loading to files.
-/// </summary>
+
 public class Journal
 {
     private List<Entry> _entries;
     private const string SEPARATOR = "~|~";
 
-    /// <summary>
-    /// Constructor that initializes an empty list of entries.
-    /// </summary>
-    public Journal()
+        public Journal()
     {
         _entries = new List<Entry>();
     }
 
-    /// <summary>
-    /// Adds a new entry to the journal.
-    /// </summary>
+    
     public void AddEntry(Entry newEntry)
     {
         _entries.Add(newEntry);
     }
 
-    /// <summary>
-    /// Displays all entries in the journal to the console.
-    /// </summary>
+    
     public void DisplayAll()
     {
         if (_entries.Count == 0)
@@ -45,10 +36,7 @@ public class Journal
         Console.WriteLine("==========================================\n");
     }
 
-    /// <summary>
-    /// Saves the journal to a file with the specified filename.
-    /// Uses a custom separator to delimit fields.
-    /// </summary>
+    
     public void SaveToFile(string filename)
     {
         try
@@ -69,10 +57,7 @@ public class Journal
         }
     }
 
-    /// <summary>
-    /// Loads the journal from a file with the specified filename.
-    /// Replaces any existing entries in the journal.
-    /// </summary>
+    
     public void LoadFromFile(string filename)
     {
         try
@@ -108,9 +93,7 @@ public class Journal
         }
     }
 
-    /// <summary>
-    /// Gets the number of entries in the journal.
-    /// </summary>
+    
     public int GetEntryCount()
     {
         return _entries.Count;

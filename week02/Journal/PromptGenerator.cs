@@ -1,17 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-/// <summary>
-/// Manages a collection of journal prompts and provides random prompts to the user.
-/// </summary>
+
 public class PromptGenerator
 {
     private List<string> _prompts;
     private Random _random;
 
-    /// <summary>
-    /// Constructor that initializes the list of prompts.
-    /// </summary>
+    
     public PromptGenerator()
     {
         _prompts = new List<string>();
@@ -19,9 +15,7 @@ public class PromptGenerator
         InitializePrompts();
     }
 
-    /// <summary>
-    /// Initializes the default list of journal prompts.
-    /// </summary>
+    
     private void InitializePrompts()
     {
         _prompts.Add("Who was the most interesting person I interacted with today?");
@@ -36,9 +30,7 @@ public class PromptGenerator
         _prompts.Add("How did I grow today, spiritually or personally?");
     }
 
-    /// <summary>
-    /// Returns a random prompt from the list.
-    /// </summary>
+    
     public string GetRandomPrompt()
     {
         int index = _random.Next(_prompts.Count);
